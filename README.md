@@ -1,1 +1,1 @@
-# guize
+# rule
