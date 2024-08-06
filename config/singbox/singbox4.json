@@ -54,7 +54,7 @@
   "outbounds": [
     { "tag": "Proxy", "type": "selector", "outbounds": ["auto", "direct", "{all}"] },
     { "tag": "🤖 OpenAI", "type": "selector", "outbounds": ["TaiWan", "Singapore", "Japan", "America", "Others"], "default": "America" },
-    { "tag": "Google", "type": "selector", "outbounds": ["HongKong", "TaiWan", "Singapore", "Japan", "America", "Others"] },
+    { "tag": "谷歌", "type": "selector", "outbounds": ["HongKong", "TaiWan", "Singapore", "Japan", "America", "Others"] },
     { "tag": "Telegram", "type": "selector", "outbounds": ["HongKong", "TaiWan", "Singapore", "Japan", "America", "Others"] },
     { "tag": "Twitter", "type": "selector", "outbounds": ["HongKong", "TaiWan", "Singapore", "Japan", "America", "Others"] },
     { "tag": "Facebook", "type": "selector", "outbounds": ["HongKong", "TaiWan", "Singapore", "Japan", "America", "Others"] },
@@ -95,7 +95,7 @@
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "direct" },
       { "ip_is_private": true, "outbound": "direct" },
       { "rule_set": "geosite-openai", "outbound": "🤖 OpenAI" },
-      { "rule_set": ["geosite-youtube", "geoip-google", "geosite-google", "geosite-github"], "outbound": "Google" },
+      { "rule_set": ["geosite-youtube", "geoip-google", "geosite-google", "geosite-github"], "outbound": "谷歌" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "Telegram" },
       { "rule_set": ["geoip-twitter", "geosite-twitter"], "outbound": "Twitter" },
       { "rule_set": ["geoip-facebook", "geosite-facebook"], "outbound": "Facebook" },
