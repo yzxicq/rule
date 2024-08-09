@@ -18,7 +18,6 @@
       {"tag": "block", "address": "rcode://success"}
     ],
     "rules": [
-      {"rule_set": "geosite-category-ads-all", "server": "block"},
       {"outbound": "any", "server": "localDns", "disable_cache": true},
       {"rule_set": "geosite-cn", "server": "localDns"},
       {"clash_mode": "direct", "server": "localDns"},
