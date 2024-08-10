@@ -71,8 +71,7 @@
   ],
   
   "route": {
-    "auto_detect_interface": true,
-    "final": "🐟 漏网之鱼",
+
     "rules": [
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "🔎 DNS请求" },
       { "clash_mode": "direct", "outbound": "🎯 全球直连" },
@@ -90,6 +89,8 @@
       { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
       { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
     ],
+        "auto_detect_interface": true,
+        "final": "🐟 漏网之鱼",
     
     "rule_set": [
       { "tag": "geosite-openai", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs", "download_detour": "🎯 全球直连" },
