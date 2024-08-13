@@ -28,8 +28,8 @@
       {"clash_mode": "global", "server": "proxyDns"},
       {"rule_set": "geosite-geolocation-!cn", "server": "fakeip"}
     ],
-    "final": "localDns",
-    "strategy": "ipv4_only"
+    "independent_cache": true,
+    "strategy": "prefer_ipv4"
   },
 
   "inbounds": [
