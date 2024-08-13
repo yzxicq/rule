@@ -25,26 +25,25 @@
       "inet6_range": "fc00::/18"
     },
     "servers": [
-      { "tag": "google", "address": "tls://8.8.8.8" },
-      { "tag": "local", "address": "https://223.5.5.5/dns-query", "detour": "🎯 全球直连" },
-      { "tag": "fakeip", "address": "fakeip" },
-      { "tag": "block", "address": "rcode://success" }
+      {"tag": "google", "address": "tls://8.8.8.8"},
+      {"tag": "local", "address": "https://223.5.5.5/dns-query", "detour": "🎯 全球直连"},
+      {"tag": "fakeip", "address": "fakeip"},
+      {"tag": "block", "address": "rcode://success"}
     ],
     "rules": [
-      { "outbound": "any", "server": "local" },
-      { "clash_mode": "direct", "server": "local" },
-      { "clash_mode": "global", "server": "google" },
-      { "query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "fakeip" },
-      { "rule_set": "geosite-cn", "server": "local" },
+      {"outbound": "any", "server": "local"},
+      {"clash_mode": "direct", "server": "local"},
+      {"clash_mode": "global", "server": "google"},
+      {"query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "fakeip"},
+      {"rule_set": "geosite-cn", "server": "local"},
       {
-        "type": "logical", "mode": "and",
-        "rules": [
-          { "rule_set": "geosite-geolocation-!cn", "invert": true },
-          { "rule_set": "geoip-cn" }
+        "type": "logical", "mode": "and", "rules": [
+          {"rule_set": "geosite-geolocation-!cn", "invert": true},
+          {"rule_set": "geoip-cn"}
         ],
         "server": "google", "client_subnet": "114.114.114.114/24"
       },
-      { "query_type": ["A", "AAAA"], "server": "fakeip" }
+      {"query_type": ["A", "AAAA"], "server": "fakeip"}
     ],
     "independent_cache": true,
     "strategy": "prefer_ipv4"
@@ -60,11 +59,7 @@
       "strict_route": true,
       "sniff": true,
       "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "0.0.0.0",
-          "server_port": 7890
-        }
+        "http_proxy": {"enabled": true, "server": "0.0.0.0", "server_port": 7890}
       }
     },
     {
