@@ -34,7 +34,7 @@
     {"rule_set": "geosite-cn", "server": "local"},
     {"rule_set": "geosite-geolocation-!cn", "server": "fakeip"},
     {"rule_set": "geoip-cn", "server": "local"},
-    {"server": ["google", "cloudflare"], "outbound": ["🚀 节点选择"]}
+    {"outbound": ["🚀 节点选择"], "server": "google"}
   ],
   "independent_cache": true,
   "strategy": "prefer_ipv4"
