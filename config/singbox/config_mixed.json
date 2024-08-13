@@ -14,7 +14,6 @@
       }
     },
   "dns": {
-    "fakeip": {"enabled": true, "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"},
     "servers": [
       {"tag": "proxyDns", "address": "tls://8.8.8.8", "address_resolver": "localDns", "address_strategy": "ipv4_only", "detour": "🚀 节点选择"},
       {"tag": "localDns", "address": "223.5.5.5", "detour": "🎯 全球直连"},
@@ -23,12 +22,19 @@
     ],
     "rules": [
       {"outbound": "any", "server": "localDns", "disable_cache": true},
-      {"rule_set": "geosite-cn", "server": "localDns"},
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
-      {"rule_set": "geosite-geolocation-!cn", "server": "fakeip"},
-      {"outbound": ["🚀 节点选择"], "server": "proxyDns"}
+      {"rule_set": "geosite-cn", "server": "localDns"},
+      {"query_type": ["A", "AAAA"], "rule_set": "geosite-geolocation-!cn", "server": "fakeip"},
+      {"rule_set": "geosite-geolocation-!cn", "server": "proxyDns"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip"}
     ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "final": "localDns",
     "independent_cache": true,
     "strategy": "prefer_ipv4"
   },
