@@ -33,7 +33,6 @@
     "rules": [
       {"rule_set": "geosite-cn", "server": "local"},
       {"query_type": ["A", "AAAA"], "rule_set": "geosite-geolocation-!cn", "server": "fakeip"},
-      {"rule_set": "geosite-category-ads-all", "server": "block"},
       {
         "type": "logical", "mode": "and", "rules": [
           {"rule_set": "geosite-geolocation-!cn", "invert": true},
