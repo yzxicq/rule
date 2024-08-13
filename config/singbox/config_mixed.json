@@ -12,12 +12,6 @@
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
     },
-    "cache_file": {
-      "enabled": true,
-      "store_fakeip": true,
-      "store_rdrc": true
-    }
-  },
 "dns": {
   "fakeip": {
     "enabled": true,
